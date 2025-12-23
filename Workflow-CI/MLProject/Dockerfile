@@ -1,0 +1,12 @@
+# 1. Python 3.12 
+FROM python:3.12-slim
+
+# 2. Set folder kerja di dalam container
+WORKDIR /app
+
+COPY . /app
+
+# 4. Install library
+RUN pip install --no-cache-dir mlflow dagshub pandas scikit-learn matplotlib seaborn
+
+CMD ["python", "modelling.py"]
